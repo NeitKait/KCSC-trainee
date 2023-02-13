@@ -15,9 +15,7 @@ require 'config.php';
         $username = $_GET['username'];
         $sql = "SELECT * FROM member WHERE username = '$username'";
         $result = mysqli_query($conn,$sql);
-        echo $_SESSION['id'];
         $row= mysqli_fetch_assoc(mysqli_query($conn,$sql));      
-        
         echo $row['username'];
         echo '<br>';
         echo 'password: ';

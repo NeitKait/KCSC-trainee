@@ -41,8 +41,8 @@ if (isset($_POST["submit"])) {
         <button type="submit" name="submit">dang ki</button>
     </form>
     <br>
-    <a href="login.php">dang nhap</a>
-    <a href="index.php">trang chu</a>
+    <a href="index.php">dang nhap</a>
+    <a href="main.php">trang chu</a>
 </body>
 
 </html>

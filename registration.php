@@ -24,25 +24,25 @@ if (isset($_POST["submit"])) {
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>dang ki</title>
+    <title>Đăng ký</title>
 </head>
 
 <body>
-    <h2>Dang ki</h2>
+    <h2>Đăng ký</h2>
     <form class="" action="" method="post" autocomplete="off">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" required value=""> <br>
-        <label for="username">username: </label>
+        <label for="username">Username: </label>
         <input type="text" name="username" id="username" required value=""> <br>
-        <label for="password">password: </label>
+        <label for="password">Password: </label>
         <input type="text" name="password" id="password" required value=""> <br>
-        <label for="password">confirm password: </label>
+        <label for="password">Nhập lại password: </label>
         <input type="text" name="confirmpassword" id="confirmpassword" required value=""> <br>
-        <button type="submit" name="submit">dang ki</button>
+        <button type="submit" name="submit">Đăng ký</button>
     </form>
     <br>
-    <a href="index.php">dang nhap</a>
-    <a href="main.php">trang chu</a>
+    <a href="index.php">Đăng nhập</a>
+    
 </body>
 
 </html>

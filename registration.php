@@ -22,27 +22,43 @@ if (isset($_POST["submit"])) {
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <title>Đăng ký</title>
 </head>
 
 <body>
+
     <h2>Đăng ký</h2>
     <form class="" action="" method="post" autocomplete="off">
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" required value=""> <br>
-        <label for="username">Username: </label>
-        <input type="text" name="username" id="username" required value=""> <br>
-        <label for="password">Password: </label>
-        <input type="text" name="password" id="password" required value=""> <br>
-        <label for="password">Nhập lại password: </label>
-        <input type="text" name="confirmpassword" id="confirmpassword" required value=""> <br>
-        <button type="submit" name="submit">Đăng ký</button>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name" id="name" required value=""></td>
+            </tr>
+            <tr>
+                <td>Username: </td>
+                <td><input type="text" name="username" id="username" required value=""></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td><input type="text" name="password" id="password" required value=""></td>
+            </tr>
+            <tr>
+                <td>Confirmpassword: </td>
+                <td><input type="text" name="confirmpassword" id="confirmpassword" required value=""></td>
+            </tr>
+            <tr>
+                <td> <button class="GFG" onclick="window.location.href = 'index.php';"> Đăng nhập</button></td>
+                <td><button type="submit" name="submit">Đăng ký</button></td>
+            </tr>
+        </table>
+
     </form>
     <br>
-    <a href="index.php">Đăng nhập</a>
-    
+
+
 </body>
 
 </html>

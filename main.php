@@ -7,39 +7,48 @@ require 'config.php';
 
 <head>
     <meta charset="UTF-8">
-    <title>trang chu</title>
+    <title>Trang chủ</title>
 </head>
 
 <body>
-
-    <h1>Helluuu, chào bạn người dùng </h1>
     <?php
     $username = $_SESSION['username'];
     $sql = "SELECT * FROM member WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-    echo 'Thông tin người dùng';
-    echo '<br>';
-    echo 'name:';
-    echo $row['name'];
-    echo '<br>';
-    echo 'username: ';
-    echo $row['username'];
-    echo '<br>';
-    echo 'password:';
-    echo $row['password'];
-    echo '<br>';
-    echo '<br>';
-
     ?>
+    <h1>Helluuu, chào <?php echo $row['name']; ?> </h1>
+    <h4>Thông tin người dùng</h4>
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><?php echo $row['name']; ?></td>
+        </tr>
+        <tr>
+            <td>Userame: </td>
+            <td><?php echo $row['username']; ?></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><?php echo $row['password']; ?></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td></td>
+        </tr>
+
+
+    </table>
+    <h4>Tải ảnh lên</h4>
+
     <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" id="">
-        <button type="submit" name="submit">UPLOAD </button>
+        <input type="file" name="file" id="" value="aloooooo">
+        <button type="submit" name="submit">Tải lên </button>
     </form>
     <br>
-
+    <h4> Lựa chọn khác</h4>
     <button class="GFG" onclick="window.location.href = 'logout.php';"> Đăng xuất</button>
-    <button class="GFG" onclick="window.location.href = 'image_show.php';"> xem ảnh đã đăng lên</button>
+    <button class="GFG" onclick="window.location.href = 'image_show.php';"> Xem ảnh đã đăng</button>
     <br>
 </body>
 

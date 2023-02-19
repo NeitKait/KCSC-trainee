@@ -44,12 +44,12 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thành công</title>
 </head>
 
 <body>
     <button class="GFG" onclick="window.location.href = 'main.php';"> Ấn vào đây để về trang chủ</button>
-    <button class="GFG" onclick="window.location.href = 'image_show.php';"> xem ảnh đã đăng lên</button>
+    <button class="GFG" onclick="window.location.href = 'image_show.php';"> Xem ảnh đã đăng</button>
 </body>
 
 </html>

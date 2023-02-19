@@ -3,7 +3,7 @@ require 'config.php';
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = md5($_POST["password"]);
     $confirmpassword = $_POST["confirmpassword"];
     $duplicate = mysqli_query($conn, "SELECT * FROM member WHERE username='$username' ");
     if (mysqli_num_rows($duplicate) > 0) {

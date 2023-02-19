@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
 
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Đăng nhập</title>
 </head>
 
 <body>

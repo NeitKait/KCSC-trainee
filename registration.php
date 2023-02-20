@@ -1,10 +1,13 @@
 <?php
 require 'config.php';
+if (!empty($_SESSION["id"])) {
+    header("Location: index.php");
+}
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
     $username = $_POST["username"];
-    $password = md5($_POST["password"]);
-    $confirmpassword = $_POST["confirmpassword"];
+    $password = $_POST["password"];
+    $confirmpassword =  $_POST["confirmpassword"];
     $duplicate = mysqli_query($conn, "SELECT * FROM member WHERE username='$username' ");
     if (mysqli_num_rows($duplicate) > 0) {
         echo "<script> alert('username bị trùng, vui lòng đặt username khác'); </script>";
@@ -35,11 +38,15 @@ if (isset($_POST["submit"])) {
         <table>
             <tr>
                 <td>Name: </td>
-                <td><input type="text" name="name" id="name" required value=""></td>
+                <td>
+                    <input type="text" name="name" id="name" required value="">
+                </td>
             </tr>
             <tr>
                 <td>Username: </td>
-                <td><input type="text" name="username" id="username" required value=""></td>
+                <td>
+                    <input type="text" name="username" id="username" required value="">
+                </td>
             </tr>
             <tr>
                 <td>Password: </td>

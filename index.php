@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
   $result = mysqli_query($conn, "SELECT * FROM member WHERE username = '$username' ");
   $row = mysqli_fetch_assoc($result);
   if ($row > 0) {
-    if ($password == $row['password']) {
+    if (password_verify($password, $row['password'])) {
       $_SESSION["login"] = true;
       $_SESSION["username"] = $username;
       $_SESSION["id"] = $row["id"];

@@ -6,14 +6,17 @@ if (!empty($_SESSION["id"])) {
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
     $confirmpassword =  $_POST["confirmpassword"];
+    echo $password."<br>";
+    echo $confirmpassword;
+
     $duplicate = mysqli_query($conn, "SELECT * FROM member WHERE username='$username' ");
     if (mysqli_num_rows($duplicate) > 0) {
         echo "<script> alert('username bị trùng, vui lòng đặt username khác'); </script>";
     } else {
-        if ($password == $confirmpassword) {
-            $query = "INSERT INTO member VALUE('', '$name','$username','$password')";
+        if (password_verify($confirmpassword,$password)) {
+            $query = "INSERT INTO member(id,name,username,password) VALUES('', '{$name}','{$username}','{$password}');";
             mysqli_query($conn, $query);
             echo "<script> alert('Đăng kí thành công'); </script>";
         } else {

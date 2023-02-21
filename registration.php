@@ -4,13 +4,10 @@ if (!empty($_SESSION["id"])) {
     header("Location: index.php");
 }
 if (isset($_POST["submit"])) {
-    $name = $_POST["name"];
-    $username = $_POST["username"];
-    $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
-    $confirmpassword =  $_POST["confirmpassword"];
-    echo $password."<br>";
-    echo $confirmpassword;
-
+    $name = mysqli_real_escape_string($conn,$_POST["name"]);
+    $username = mysqli_real_escape_string($conn,$_POST["username"]);
+    $password = mysqli_real_escape_string($conn, password_hash($_POST["password"],PASSWORD_DEFAULT));
+    $confirmpassword =  mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
     $duplicate = mysqli_query($conn, "SELECT * FROM member WHERE username='$username' ");
     if (mysqli_num_rows($duplicate) > 0) {
         echo "<script> alert('username bị trùng, vui lòng đặt username khác'); </script>";
